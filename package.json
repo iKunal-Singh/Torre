@@ -1,0 +1,26 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iKunal-Singh/Torre.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/iKunal-Singh/Torre/issues"
+  },
+  "homepage": "https://github.com/iKunal-Singh/Torre#readme",
+  "dependencies": {
+    "@streamparser/json": "^0.0.22",
+    "express": "^5.1.0",
+    "node-fetch": "^3.3.2"
+  }
+}
