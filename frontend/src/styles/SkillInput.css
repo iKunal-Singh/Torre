@@ -1,0 +1,37 @@
+.skill-input-container {
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.skill-input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.skill-input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.skill-input-field:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.skill-input-field:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+
+.skill-input-hint {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #777;
+}

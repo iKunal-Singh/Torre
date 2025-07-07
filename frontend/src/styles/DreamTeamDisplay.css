@@ -1,0 +1,42 @@
+.dream-team-display-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.dream-team-title {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.dream-team-empty-message {
+  text-align: center;
+  color: #777;
+  font-size: 1.1em;
+  padding: 20px;
+}
+
+.dream-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+/* Styling for CandidateCard within DreamTeamDisplay can be adjusted if needed,
+   but primarily, CandidateCard.css will handle its own appearance.
+   This ensures consistency if CandidateCard is used elsewhere.
+   However, you might want to override or add container-specific styles here.
+   For example, if the cards in the dream team display should look slightly different: */
+
+.dream-team-grid .candidate-card {
+  /* Example: Add a special border for dream team members */
+  /* border: 2px solid green; */
+  /* The 'added' class in CandidateCard.css already provides some distinction */
+}

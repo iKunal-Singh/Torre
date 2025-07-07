@@ -1,0 +1,163 @@
+.dream-team-builder {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f6; /* Light grayish background for the whole page */
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.builder-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.builder-header h1 {
+  font-size: 2.5em;
+  color: #2c3e50; /* Dark blue-gray */
+  margin-bottom: 5px;
+}
+
+.builder-header p {
+  font-size: 1.1em;
+  color: #7f8c8d; /* Grayish text */
+}
+
+.error-message {
+  background-color: #ffebee; /* Light red */
+  color: #c62828; /* Darker red */
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #ef9a9a;
+}
+
+.sse-status-message {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  color: #333;
+  font-style: italic;
+}
+
+.controls-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Spacing between control elements */
+}
+
+.control-button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  width: 100%; /* Make buttons take full width of their container */
+  max-width: 300px; /* Max width for the button itself */
+  align-self: center; /* Center the button if container is wider */
+}
+
+.control-button:active {
+    transform: translateY(1px);
+}
+
+.start-button {
+  background-color: #27ae60; /* Green */
+  color: white;
+}
+
+.start-button:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.start-button:disabled {
+  background-color: #a3e9a4;
+  cursor: not-allowed;
+}
+
+.stop-button {
+  background-color: #e74c3c; /* Red */
+  color: white;
+}
+
+.stop-button:hover {
+  background-color: #c0392b;
+}
+
+.loading-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #555;
+  padding: 20px;
+}
+
+.results-section {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 30px;
+}
+
+/* On larger screens, split results into two columns */
+@media (min-width: 992px) {
+  .results-section {
+    grid-template-columns: 2fr 1fr; /* Streaming candidates take more space */
+  }
+}
+
+
+.streaming-candidates-container,
+.dream-team-display-container { /* .dream-team-display-container is styled in its own CSS but we can add layout specifics here */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.streaming-candidates-container h2 {
+  font-size: 1.5em;
+  color: #34495e; /* Another dark blue-gray */
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ecf0f1; /* Light separator */
+  padding-bottom: 10px;
+}
+
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+  max-height: 600px; /* Give a max height to make it scrollable */
+  overflow-y: auto;
+  padding-right: 10px; /* For scrollbar */
+}
+
+/* Basic scrollbar styling for candidates grid */
+.candidates-grid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.candidates-grid::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.candidates-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.candidates-grid::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}

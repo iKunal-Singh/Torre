@@ -1,0 +1,72 @@
+.candidate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.candidate-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.candidate-card.added {
+  background-color: #f0f9ff; /* Light blue to indicate added */
+  border-color: #cce7ff;
+}
+
+.candidate-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #007bff;
+  background-color: #f0f0f0; /* Fallback for broken images */
+}
+
+.candidate-info {
+  margin-bottom: 15px;
+}
+
+.candidate-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0;
+}
+
+.candidate-skills {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+  word-break: break-word;
+}
+
+.candidate-add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.candidate-add-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.candidate-add-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
