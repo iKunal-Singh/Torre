@@ -1,0 +1,133 @@
+{
+  "peopleSearchAPI": {
+    "endpoint": "https://search.torre.ai/people/_searchStream",
+    "method": "POST",
+    "description": "Searches for people on the Torre platform and streams results.",
+    "request": {
+      "headers": {
+        "Content-Type": "application/json",
+        "Accept": "application/x-ndjson",
+        "User-Agent": "Jules-API-Explorer/1.0"
+      },
+      "payloadExample": {
+        "query": "Alexander Torrenegra",
+        "identityType": "person",
+        "limit": 10,
+        "offset": 0,
+        "meta": false
+      },
+      "notes": "The payload structure is an assumption based on common search API patterns. Specific filters and pagination parameters might vary."
+    },
+    "response": {
+      "headers": {
+        "Content-Type": "application/x-ndjson",
+        "Transfer-Encoding": "chunked",
+        "Cache-Control": "no-cache",
+        "Vary": "Accept"
+      },
+      "structureExample": [
+        {
+          "ggId": "xxxxxxxxx1",
+          "name": "Alexander Torrenegra",
+          "username": "torrenegra",
+          "picture": "https://url.to.picture/profile.jpg",
+          "professionalHeadline": "Founder at Torre, Bunny Studio, Voice123",
+          "locationName": "Remote",
+          "verified": true,
+          "connections": [],
+          "compensations": {}
+        },
+        {
+          "comment": "Each subsequent JSON object for a person would be on a new line."
+        }
+      ],
+      "notes": "Response is streamed as newline-delimited JSON (NDJSON). Each line is a complete JSON object representing a person. The example shows the structure of one such object."
+    }
+  },
+  "genomeAPI": {
+    "endpoint": "https://torre.co/api/bios/:username",
+    "method": "GET",
+    "description": "Retrieves the professional genome (profile information) for a given username.",
+    "request": {
+      "headers": {
+        "Accept": "application/json",
+        "User-Agent": "Jules-API-Explorer/1.0"
+      },
+      "payloadExample": null,
+      "notes": "Replace ':username' in the endpoint with the actual username, e.g., 'alexandertorrenegra'."
+    },
+    "response": {
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "ETag": "\"some_unique_etag_for_this_response_version\"",
+        "Last-Modified": "Sun, 28 Jul 2024 10:30:00 GMT",
+        "Cache-Control": "public, max-age=3600",
+        "Access-Control-Allow-Origin": "*"
+      },
+      "structureExample": {
+        "person": {
+          "ggId": "xxxxxxxxx1",
+          "publicId": "alexandertorrenegra",
+          "name": "Alexander Torrenegra",
+          "picture": "https://url.to.picture/profile.jpg",
+          "professionalHeadline": "Founder at Torre, Bunny Studio, Voice123",
+          "summaryOfBio": "Entrepreneur and investor with a passion for remote work and AI.",
+          "location": {
+            "name": "Remote",
+            "shortName": "Remote",
+            "country": "N/A"
+          },
+          "verified": true,
+          "flags": {
+            "genomeCompletion": 100,
+            "onBoarded": true,
+            "remoter": true
+          },
+          "compensations": {
+            "USD": {
+                "minAmount": 100000,
+                "maxAmount": 250000,
+                "currency": "USD",
+                "periodicity": "yearly"
+            }
+          },
+          "openTo": ["consulting", "full-time-employment"]
+        },
+        "strengths": [
+          {
+            "id": "skill_id_1",
+            "name": "Entrepreneurship",
+            "experience": "10+ years",
+            "proficiency": "expert"
+          }
+        ],
+        "experiences": [
+          {
+            "id": "exp_id_1",
+            "category": "jobs",
+            "name": "Founder",
+            "organizations": [{"name": "Torre"}],
+            "fromYear": "2019",
+            "toYear": null
+          }
+        ],
+        "education": [
+          {
+            "id": "edu_id_1",
+            "name": "B.S. Computer Science",
+            "organizations": [{"name": "Universidad Nacional de Colombia"}]
+          }
+        ],
+        "links": [
+          {"name": "LinkedIn", "address": "https://www.linkedin.com/in/torrenegra"}
+        ],
+        "meta": {
+          "created": "2010-01-01T12:00:00Z",
+          "lastModified": "2024-07-28T10:30:00Z",
+          "completionScore": 1.0
+        }
+      },
+      "notes": "The example response is a simplified version. The actual API would likely return a much richer and more detailed structure for each section (strengths, experiences, education, etc.)."
+    }
+  }
+}
